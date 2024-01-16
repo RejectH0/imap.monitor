@@ -34,12 +34,16 @@ def setup():
         elif session['setup_stage'] == 2:
             # process IMAP server info
             session['imap_info'] = request.form
+            debug_message = 'IMAP Info: ' + ', '.join(f'{key}: {value}' for key, value in session['imap_info'].items())
+            flash(debug_message, 'debug')
             session['setup_stage'] = 3
             return redirect(url_for('setup'))
 
         elif session['setup_stage'] == 3:
             # Process user account creation
             session['account_info'] = request.form
+            debug_message = 'Account Info: ' + ', '.join(f'{key}: {value}' for key, value in session['account_info'].items())
+            flash(debug_message, 'debug')
             return redirect(url_for('setup_complete'))
 
     return render_template('setup.html', header_title=f"Setup: IMAP Monitor Stage {session['setup_stage']}", stage=session['setup_stage'])
