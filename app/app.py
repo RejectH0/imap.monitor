@@ -23,6 +23,8 @@ def setup():
         if session['setup_stage'] == 1:
             # Process and validate database info, then test connection
             session['db_info'] = request.form
+            debug_message = 'DB Info: ' + ', '.join(f'{key}: {value}' for key, value in session['db_info'].items())
+            flash(debug_message, 'debug')
             # use mysql_db_connector python library to test the connection with the user supplied data.
 
             # If successful, move to next stage
