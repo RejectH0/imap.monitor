@@ -1,0 +1,28 @@
+header {
+            background-color: #0b086e;
+            color: white;
+            padding: 10px 0;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-content h1 {
+            margin: 0;
+            padding-left: 20px;
+        }
+footer {
+            background-color: #0d6efd; /* Bootstrap primary color for complement */
+            color: white;
+            padding: 10px 0;
+        }
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+.red-text {
+	color: red;
+	}

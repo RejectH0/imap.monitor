@@ -1,0 +1,11 @@
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% for category, message in messages %}
+  	{% if category == 'debug' %}
+		<!-- Debug message display -->
+		<div class="alert alert-secondary">{{ message }}</div>
+	{% else %}
+		<!-- Regular message display -->
+    <div class="alert alert-info">{{ message }}</div>
+    {% endif %}
+  {% endfor %}
+{% endwith %}

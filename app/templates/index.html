@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Setup-IMAP-Monitor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://10.30.10.187:8080/static/css/imap-monitor.css">
+</head>
+<body>
+
+{% include 'header.html' %}
+
+<main role="main" class="container py-4">
+{% include 'alert.html' %}
+
+    <div class="row">
+        <!-- Setup Card -->
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Setup</h5>
+                    <p class="card-text">Configure your IMAP settings.</p>
+                    <a href="/setup" class="btn btn-primary">Go to Setup</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Card -->
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Login</h5>
+                    <p class="card-text">Access your account.</p>
+                    <a href="/login" class="btn btn-primary">Login</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Monitor Card -->
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Monitor</h5>
+                    <p class="card-text">View monitoring dashboard.</p>
+                    <a href="/monitor" class="btn btn-primary">Go to Monitor</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% include 'footer.html' %}
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

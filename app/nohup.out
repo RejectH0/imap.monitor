@@ -1,0 +1,261 @@
+  File "/home/shaggy/imap-monitor/app/./app.py", line 10
+    app.run(debug=True, host=0.0.0.0, port=8080)
+                             ^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.30.10.187:8080
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 158-891-197
+10.20.65.52 - - [16/Jan/2024 03:04:04] "GET / HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:04:05] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.30.10.187:8080
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 158-891-197
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.30.10.187:8080
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 158-891-197
+10.20.65.52 - - [16/Jan/2024 03:22:49] "GET / HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:22:49] "GET /static/css/imap-monitor.css HTTP/1.1" 200 -
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.30.10.187:8080
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 158-891-197
+10.20.65.52 - - [16/Jan/2024 03:25:40] "GET / HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:25:40] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 03:25:43] "[33mGET /setup HTTP/1.1[0m" 404 -
+10.20.65.52 - - [16/Jan/2024 03:27:00] "[33mGET /setup HTTP/1.1[0m" 404 -
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.30.10.187:8080
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 158-891-197
+10.20.65.52 - - [16/Jan/2024 03:30:57] "GET / HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:30:57] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 03:30:59] "GET / HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:30:59] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 03:31:01] "[35m[1mGET /setup HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/shaggy/imap-monitor/lib/python3.11/site-packages/flask/app.py", line 1478, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shaggy/imap-monitor/lib/python3.11/site-packages/flask/app.py", line 1458, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shaggy/imap-monitor/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shaggy/imap-monitor/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shaggy/imap-monitor/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shaggy/imap-monitor/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shaggy/imap-monitor/app/app.py", line 18, in setup
+    return render_template('setup.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shaggy/imap-monitor/lib/python3.11/site-packages/flask/templating.py", line 151, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shaggy/imap-monitor/lib/python3.11/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shaggy/imap-monitor/lib/python3.11/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shaggy/imap-monitor/lib/python3.11/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shaggy/imap-monitor/lib/python3.11/site-packages/jinja2/loaders.py", line 125, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shaggy/imap-monitor/lib/python3.11/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shaggy/imap-monitor/lib/python3.11/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: setup.html
+10.20.65.52 - - [16/Jan/2024 03:31:01] "GET /setup?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:31:01] "GET /setup?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:31:01] "GET /setup?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:31:01] "[36mGET /setup?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.30.10.187:8080
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 158-891-197
+10.20.65.52 - - [16/Jan/2024 03:35:20] "GET / HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:35:20] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 03:35:21] "GET /setup HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:35:21] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 03:35:24] "GET /setup HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:35:24] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 03:35:25] "GET /setup HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:35:25] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 03:35:25] "GET /setup HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:35:25] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 03:35:26] "GET /setup HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:35:26] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 03:38:04] "GET /setup HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:38:04] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 03:38:05] "GET /setup HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:38:05] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 03:38:14] "GET / HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:38:14] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 03:42:46] "GET / HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:42:46] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 03:42:47] "GET / HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:42:47] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+ * Detected change in '/home/shaggy/imap-monitor/app/app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 158-891-197
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.30.10.187:8080
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 158-891-197
+10.20.65.52 - - [16/Jan/2024 03:45:44] "GET / HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:45:44] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 03:46:09] "GET / HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:46:09] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 03:46:31] "GET / HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:46:31] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 03:46:45] "GET /setup HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:46:45] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 03:48:03] "GET /setup HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:48:03] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 03:51:56] "GET /setup HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:51:56] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 03:51:57] "GET /setup HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:51:57] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+ * Detected change in '/home/shaggy/imap-monitor/app/app.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "/home/shaggy/imap-monitor/app/app.py", line 4, in <module>
+    app.secret_key = os.urandom(24)
+                     ^^
+NameError: name 'os' is not defined
+Traceback (most recent call last):
+  File "/home/shaggy/imap-monitor/app/app.py", line 4, in <module>
+    app.secret_key = os.urandom(24)
+                     ^^
+NameError: name 'os' is not defined
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.30.10.187:8080
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 158-891-197
+10.20.65.52 - - [16/Jan/2024 03:57:45] "GET / HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:57:45] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 03:57:47] "GET /setup HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:57:47] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 03:57:53] "GET /setup HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 03:57:53] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.30.10.187:8080
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 158-891-197
+10.20.65.52 - - [16/Jan/2024 04:02:20] "GET / HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 04:02:20] "GET /static/css/imap-monitor.css HTTP/1.1" 200 -
+ * Detected change in '/home/shaggy/imap-monitor/app/app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 158-891-197
+10.20.65.52 - - [16/Jan/2024 04:02:37] "GET / HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 04:02:37] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 04:02:38] "[32mGET /setup HTTP/1.1[0m" 302 -
+10.20.65.52 - - [16/Jan/2024 04:02:38] "GET / HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 04:02:38] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 04:02:41] "[32mGET /setup HTTP/1.1[0m" 302 -
+10.20.65.52 - - [16/Jan/2024 04:02:41] "GET / HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 04:02:41] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 04:03:28] "GET / HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 04:03:28] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 04:03:49] "[32mGET /setup HTTP/1.1[0m" 302 -
+10.20.65.52 - - [16/Jan/2024 04:03:49] "GET / HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 04:03:49] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 04:03:51] "GET / HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 04:03:51] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 04:03:52] "[32mGET /setup HTTP/1.1[0m" 302 -
+10.20.65.52 - - [16/Jan/2024 04:03:52] "GET / HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 04:03:52] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+ * Detected change in '/home/shaggy/imap-monitor/app/app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 158-891-197
+10.20.65.52 - - [16/Jan/2024 04:03:57] "GET / HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 04:03:57] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 04:03:58] "GET /setup HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 04:03:58] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 04:04:06] "GET /setup HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 04:04:06] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 04:18:40] "GET /setup HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 04:18:40] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 04:20:19] "GET /setup HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 04:20:19] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 04:31:24] "GET /setup HTTP/1.1" 200 -
+10.20.65.52 - - [16/Jan/2024 04:31:24] "[36mGET /static/css/imap-monitor.css HTTP/1.1[0m" 304 -
+10.20.65.52 - - [16/Jan/2024 04:42:10] "[31m[1mPOST /setup HTTP/1.1[0m" 405 -
+ * Detected change in '/home/shaggy/imap-monitor/app/app.py', reloading
+ * Restarting with stat
+  File "/home/shaggy/imap-monitor/app/app.py", line 19
+    if 'setup_stage' not in session:
+TabError: inconsistent use of tabs and spaces in indentation
+  File "/home/shaggy/imap-monitor/app/app.py", line 19
+    if 'setup_stage' not in session:
+TabError: inconsistent use of tabs and spaces in indentation

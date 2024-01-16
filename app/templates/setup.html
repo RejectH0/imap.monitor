@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Setup-IMAP-Monitor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://10.30.10.187:8080/static/css/imap-monitor.css">
+</head>
+<body>
+
+{% include 'header.html' %}
+
+<main role="main" class="container py-4">
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="alert alert-info">
+      {% for message in messages %}
+        {{ message }}
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+	<div class="row">
+        <!-- Information Area -->
+        <div class="col-md-6">
+            <div class="info-section">
+                <!-- Content based on the current stage -->
+                <h2>Please Enter the MariaDB Database Server Parameters:</h2>
+                <!-- You can add more HTML elements as needed for your content -->
+            </div>
+        </div>
+
+        <!-- Form Area -->
+        <div class="col-md-6">
+        <form method="post" action="{{ url_for('setup') }}">
+    <div class="form-group">
+        <label for="hostname">MariaDB Server Hostname:</label>
+        <input type="text" class="form-control" id="hostname" name="hostname" required>
+    </div>
+    <div class="form-group">
+        <label for="username">Database Username:</label>
+        <input type="text" class="form-control" id="username" name="username" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Database Password:</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+		</div>
+    </div>
+</main>
+
+{% include 'footer.html' %}
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
