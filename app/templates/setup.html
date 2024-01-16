@@ -10,15 +10,8 @@
 {% include 'header.html' %}
 
 <main role="main" class="container py-4">
-{% with messages = get_flashed_messages() %}
-  {% if messages %}
-    <div class="alert alert-info">
-      {% for message in messages %}
-        {{ message }}
-      {% endfor %}
-    </div>
-  {% endif %}
-{% endwith %}
+{% include 'alert.html' %}
+
 	<div class="row">
         <!-- Information Area -->
         <div class="col-md-6">
