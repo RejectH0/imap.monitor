@@ -2,6 +2,8 @@ import logging
 from flask import Flask, flash, render_template, redirect, request, session, url_for
 import os
 import configparser
+import logging
+import datetime
 import mysql.connector
 
 app = Flask(__name__)
@@ -15,6 +17,7 @@ DB_PORT = int(config['database']['port'])
 DB_USER = config['database']['user']
 DB_PASS = config['database']['password']
 DB_NAME = config['database']['name']
+LOG_FILE = config['logging']['file']  # Add new variable for log file location
 
 def is_database_connected():
     # Return True if connected, False otherwise
@@ -35,11 +38,56 @@ def is_database_connected():
         else:
             return False
 
-    except ImportError:
-        return False
-    except Exception as e:
+    except mysql.connector.Error as e:
         logging.error(f"Error connecting to the database: {str(e)}")
         return False
+
+def connect_to_database():
+    try:
+        # Create a connection object
+        conn = mysql.connector.connect(
+            host=DB_HOST,
+            port=DB_PORT,
+            user=DB_USER,
+            password=DB_PASS
+        )
+
+        # Create a cursor object
+        cursor = conn.cursor()
+
+        # Create the database if it does not exist
+        cursor.execute(f"CREATE DATABASE IF NOT EXISTS {DB_NAME}")
+
+        # Close the cursor and connection
+        cursor.close()
+        conn.close()
+
+        return True
+
+    except mysql.connector.Error as e:
+        logging.error(f"Error connecting to the database: {str(e)}")
+        return False
+
+# Check if LOG_FILE is defined in the config.ini file
+if 'logging' not in config:
+    config['logging'] = {}
+if 'file' not in config['logging']:
+    # Generate a default LOG_FILE name using the current date and time
+    now = datetime.datetime.now()
+    log_file_name = f"{socket.gethostname()}-{now.strftime('%Y%m%d%H%M%S')}"
+    config['logging']['file'] = log_file_name
+
+    # Write the updated config.ini file
+    with open('config.ini', 'w') as configfile:
+        config.write(configfile)
+
+# Connect to the database
+if not is_database_connected():
+    if connect_to_database():
+        logging.info(f"Successfully connected to the database: {DB_NAME}")
+    else:
+        logging.error(f"Failed to connect to the database: {DB_NAME}")
+
 
 
 @app.route('/setup', methods=['GET', 'POST'])
@@ -87,11 +135,10 @@ def setup_complete():
     # Optionally, clear the session here
     return 'Setup Complete!'
 
-
 @app.route('/')
 def home():
     return render_template('index.html', header_title='Main Menu: IMAP Monitor')
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(filename=LOG_FILE, level=logging.INFO)  # Configure logging to output to the specified log file
     app.run(debug=True, host='0.0.0.0', port=8082)
