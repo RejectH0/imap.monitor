@@ -1,13 +1,46 @@
 from flask import Flask, flash, render_template, redirect, request, session, url_for
 import os
+import configparser
+import mysql.connector
+import pymysql
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+DB_HOST = config['database']['host']
+DB_PORT = int(config['database']['port'])
+DB_USER = config['database']['user']
+DB_PASS = config['database']['password']
+DB_NAME = config['database']['name']
+
 def is_database_connected():
-    # Replace with your actual database connection check
     # Return True if connected, False otherwise
-    return False # For demonstration purposes, let's say it's not connected
+    try:
+        # Create a connection object
+        conn = mysql.connector.connect(
+            host=DB_HOST,
+            port=DB_PORT,
+            user=DB_USER,
+            password=DB_PASS,
+            database=DB_NAME
+        )
+
+        # Check if the connection is successful
+        if conn.is_connected():
+            conn.close()
+            return True
+        else:
+            return False
+
+    except ImportError:
+        return False
+    except Exception as e:
+        print(f"Error connecting to the database: {str(e)}")
+        return False
+
 
 @app.route('/setup', methods=['GET', 'POST'])
 def setup():
@@ -25,7 +58,7 @@ def setup():
             session['db_info'] = request.form
             debug_message = 'DB Info: ' + ', '.join(f'{key}: {value}' for key, value in session['db_info'].items())
             flash(debug_message, 'debug')
-            # use mysql_db_connector python library to test the connection with the user supplied data.
+            # use mysql.connector python library to test the connection with the user supplied data.
 
             # If successful, move to next stage
             session['setup_stage'] = 2
