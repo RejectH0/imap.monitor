@@ -1,8 +1,8 @@
+import logging
 from flask import Flask, flash, render_template, redirect, request, session, url_for
 import os
 import configparser
 import mysql.connector
-import pymysql
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
@@ -38,7 +38,7 @@ def is_database_connected():
     except ImportError:
         return False
     except Exception as e:
-        print(f"Error connecting to the database: {str(e)}")
+        logging.error(f"Error connecting to the database: {str(e)}")
         return False
 
 
@@ -57,7 +57,7 @@ def setup():
             # Process and validate database info, then test connection
             session['db_info'] = request.form
             debug_message = 'DB Info: ' + ', '.join(f'{key}: {value}' for key, value in session['db_info'].items())
-            flash(debug_message, 'debug')
+            logging.info(debug_message)
             # use mysql.connector python library to test the connection with the user supplied data.
 
             # If successful, move to next stage
@@ -68,7 +68,7 @@ def setup():
             # process IMAP server info
             session['imap_info'] = request.form
             debug_message = 'IMAP Info: ' + ', '.join(f'{key}: {value}' for key, value in session['imap_info'].items())
-            flash(debug_message, 'debug')
+            logging.info(debug_message)
             session['setup_stage'] = 3
             return redirect(url_for('setup'))
 
@@ -76,7 +76,7 @@ def setup():
             # Process user account creation
             session['account_info'] = request.form
             debug_message = 'Account Info: ' + ', '.join(f'{key}: {value}' for key, value in session['account_info'].items())
-            flash(debug_message, 'debug')
+            logging.info(debug_message)
             return redirect(url_for('setup_complete'))
 
     return render_template('setup.html', header_title=f"Setup: IMAP Monitor Stage {session['setup_stage']}", stage=session['setup_stage'])
@@ -93,4 +93,5 @@ def home():
     return render_template('index.html', header_title='Main Menu: IMAP Monitor')
 
 if __name__ == '__main__':
+    logging.basicConfig(level=logging.INFO)
     app.run(debug=True, host='0.0.0.0', port=8082)
